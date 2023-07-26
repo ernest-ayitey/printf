@@ -98,9 +98,9 @@ int print_percent(va_list types, char buffer[],
 
 /**
  * print_int - Print int
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @types:  arguments
+ * @buffer: array to handle print
+ * @flags:  Calc active flags
  * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
@@ -111,26 +111,26 @@ int print_int(va_list types, char buffer[],
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
-	long int n = va_arg(types, long int);
+	long int k = va_arg(types, long int);
 	unsigned long int num;
 
-	n = convert_size_number(n, size);
+	k = convert_size_number(n, size);
 
-	if (n == 0)
+	if (k == 0)
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	num = (unsigned long int)n;
+	num = (unsigned long int)k;
 
-	if (n < 0)
+	if (k < 0)
 	{
-		num = (unsigned long int)((-1) * n);
+		num = (unsigned long int)((-1) * k);
 		is_negative = 1;
 	}
 
 	while (num > 0)
 	{
-		buffer[i--] = (num % 10) + '0';
+	i	buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
 
