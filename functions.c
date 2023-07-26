@@ -111,20 +111,20 @@ int print_int(va_list types, char buffer[],
 {
 	int i = BUFF_SIZE - 2;
 	int is_negative = 0;
-	long int k = va_arg(types, long int);
+	long int n = va_arg(types, long int);
 	unsigned long int num;
 
-	k = convert_size_number(n, size);
+	n = convert_size_number(n, size);
 
-	if (k == 0)
+	if (n == 0)
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
-	num = (unsigned long int)k;
+	num = (unsigned long int)n;
 
 	if (n < 0)
 	{
-		num = (unsigned long int)((-1) * k);
+		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
 	}
 
